@@ -30,7 +30,7 @@ public class IHMToolBar extends JToolBar {
 		JButton coBD = new JButton("Connexion", new ImageIcon(this.getClass().getResource("DatabaseAdd32.png")));
 		JButton userAdd = new JButton("Ajouter",new ImageIcon(this.getClass().getResource("UsersAdd32.png")));
 		JButton refresh = new JButton("Rafraîchir", new ImageIcon(this.getClass().getResource("Refresh32.png")));
-		JButton editUser = new JButton("Rechercher", new ImageIcon(this.getClass().getResource("UserEdit32.png")));
+		//JButton editUser = new JButton("Rechercher", new ImageIcon(this.getClass().getResource("UserEdit32.png")));
 		JButton deleteuser = new JButton("Actif/Inactif", new ImageIcon(this.getClass().getResource("UserDelete32.png")));
 		JButton importelement = new JButton("Importer", new ImageIcon(this.getClass().getResource("CardboardBoxDownload32.png")));
 		JButton exportelement = new JButton("Exporter", new ImageIcon(this.getClass().getResource("CardboardBoxUpload32.png"))); 
@@ -39,7 +39,7 @@ public class IHMToolBar extends JToolBar {
 		coBD.setBorder(new BevelBorder(BevelBorder.RAISED));
 		userAdd.setBorder(new BevelBorder(BevelBorder.RAISED));
 		refresh.setBorder(new BevelBorder(BevelBorder.RAISED));
-		editUser.setBorder(new BevelBorder(BevelBorder.RAISED));
+		//editUser.setBorder(new BevelBorder(BevelBorder.RAISED));
 		deleteuser.setBorder(new BevelBorder(BevelBorder.RAISED));
 		importelement.setBorder(new BevelBorder(BevelBorder.RAISED));
 		exportelement.setBorder(new BevelBorder(BevelBorder.RAISED));
@@ -52,7 +52,7 @@ public class IHMToolBar extends JToolBar {
 		this.addSeparator();
 		this.add(userAdd);
 		this.add(deleteuser);
-		this.add(editUser);
+		//this.add(editUser);
 		this.addSeparator();
 		this.add(refresh);
 		this.addSeparator();

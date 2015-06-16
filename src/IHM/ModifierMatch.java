@@ -1,5 +1,6 @@
 package IHM;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.sql.ResultSet;
 
@@ -27,7 +28,7 @@ public class ModifierMatch extends JFrame{
 				+ " and e1.idjoueur2 = j2.idjoueur"
 				+ " and numerotour = "+tour+"");
 		
-		
+
 		setListeequipe(new String[MainWindows.getListeequipe().getRowCount()][2]);
 		setListesimple(new String[MainWindows.getListeequipe().getRowCount()]);
 		
@@ -42,6 +43,8 @@ public class ModifierMatch extends JFrame{
 		
 		
 		
+		
+		
 		this.paire1 = new JComboBox(getListesimple());
 		this.paire2 = new JComboBox(getListesimple());
 		this.id = idmatch;
@@ -50,21 +53,49 @@ public class ModifierMatch extends JFrame{
 		this.paire2.setSelectedItem(pairenom2);
 		
 		
-		JPanel principal = new JPanel(new GridLayout(3, 2));
+		JPanel principal = new JPanel(new GridLayout(3, 1));
 		
 		JLabel numeroequipe = new JLabel("Paire Id : "+this.id);
 		JLabel nompaire1 = new JLabel("Paire 1 : ");
 		JLabel nompaire2 = new JLabel("Paire 2 : ");
+		JLabel tscore = new JLabel("  Score : ");
+		JLabel tscore2 = new JLabel("  Score : ");
+		
+		JTextField score1 = new JTextField("0");
+		score1.setPreferredSize(new Dimension(50, 20));
+		JTextField score2 = new JTextField("0");
+		
 		
 		JButton valider = new JButton("Valider");
-		valider.addActionListener(new ControleurModificationMatch(paire1, paire2, idmatch, this));
+		valider.addActionListener(new ControleurModificationMatch(paire1, paire2, score1, score2, idmatch, this));
+		
+		
+		JPanel p1 = new JPanel();
+		p1.setLayout(new BoxLayout(p1, BoxLayout.X_AXIS));
+		
+		JPanel p2 = new JPanel();
+		p2.setLayout(new BoxLayout(p2, BoxLayout.X_AXIS));
+		
+		JPanel p3 = new JPanel();
+		p3.setLayout(new BoxLayout(p3, BoxLayout.X_AXIS));
+		
+		
+	
 		
 		//principal.add(numeroequipe);
-		principal.add(nompaire1);
-		principal.add(paire1);
-		principal.add(nompaire2);
-		principal.add(paire2);
-		principal.add(valider);
+		p1.add(nompaire1);
+		p1.add(paire1);
+		p1.add(tscore);
+		p1.add(score1);
+		p2.add(nompaire2);
+		p2.add(paire2);
+		p2.add(tscore2);
+		p2.add(score2);
+		p3.add(valider);
+		
+		principal.add(p1);
+		principal.add(p2);
+		principal.add(p3);
 		
 		
 
